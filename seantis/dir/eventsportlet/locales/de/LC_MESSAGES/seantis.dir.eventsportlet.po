@@ -1,0 +1,59 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-12-04 14:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: seantis.dir.eventsportlet\n"
+
+#: ./configure.zcml
+msgid "Adds a portlet to display events."
+msgstr "Fügt ein Portlet zum Anzeigen von Veranstaltungen hinzu."
+
+#: ./events.py:53
+msgid "A portlet which displays events."
+msgstr "Ein Portlet zum Anzeigen von Veranstaltungen."
+
+#: ./events.py:52
+msgid "Add events portlet"
+msgstr "Veranstaltungs-Portlet hinzfügen"
+
+#: ./events.py:66
+msgid "Edit events portlet"
+msgstr "Veranstaltungs-Portlet bearbeiten"
+
+#: ./events.py:25
+msgid "Events portlet"
+msgstr "Veranstaltungs-Portlet"
+
+#: ./interfaces.py:23
+msgid "Filter events by category names"
+msgstr "Filtere Veranstaltungen mittels Kategorien"
+
+#: ./interfaces.py:29
+msgid "Filter: 1st category name"
+msgstr "Filter: Kategorie 1"
+
+#: ./interfaces.py:35
+msgid "Filter: 2nd category name"
+msgstr "Filter: Kategorie 2"
+
+#: ./interfaces.py:17
+msgid "Maximum number of displayed events"
+msgstr "Maximale Anzahl angezeigter Veranstaltungen"
+
+#: ./interfaces.py:12
+msgid "The URL of the events directory"
+msgstr "URL des Veranstaltungskalenders"
+
