@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-04 15:18+0000\n"
+"POT-Creation-Date: 2013-12-09 14:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,39 +21,47 @@ msgstr ""
 msgid "Adds a portlet to display events."
 msgstr ""
 
-#: ./events.py:55
+#: ./events.py:127
 msgid "A portlet which displays events."
 msgstr ""
 
-#: ./events.py:54
+#: ./events.py:126
 msgid "Add events portlet"
 msgstr ""
 
-#: ./events.py:68
+#: ./events.py:141
 msgid "Edit events portlet"
 msgstr ""
 
-#: ./events.py:25
+#: ./events.pt:8
+msgid "Events"
+msgstr ""
+
+#: ./events.py:80
 msgid "Events portlet"
 msgstr ""
 
-#: ./interfaces.py:23
+#: ./events.py:37
 msgid "Filter events by category names"
 msgstr ""
 
-#: ./interfaces.py:29
+#: ./events.py:43
 msgid "Filter: 1st category name"
 msgstr ""
 
-#: ./interfaces.py:35
+#: ./events.py:49
 msgid "Filter: 2nd category name"
 msgstr ""
 
-#: ./interfaces.py:17
+#: ./events.py:31
 msgid "Maximum number of displayed events"
 msgstr ""
 
-#: ./interfaces.py:12
+#: ./events.pt:20
+msgid "More"
+msgstr ""
+
+#: ./events.py:26
 msgid "The URL of the events directory"
 msgstr ""
 

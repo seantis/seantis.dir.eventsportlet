@@ -1,8 +1,4 @@
-from Products.CMFCore.utils import getToolByName
-
-
-def setup_initial(context):
-    pass
+# from Products.CMFCore.utils import getToolByName
 
 
 def upgrade_1000_to_1001(context):

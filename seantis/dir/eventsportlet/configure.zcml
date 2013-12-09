@@ -3,6 +3,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="seantis.dir.eventsportlet">
 
     <i18n:registerTranslations directory="locales" />
@@ -23,7 +24,7 @@
     <include package="plone.app.portlets" />
     <plone:portlet
       name="seantis.dir.eventsportlet"
-      interface=".interfaces.IEventsPortlet"
+      interface=".events.IEventsPortlet"
       assignment=".events.Assignment"
       renderer=".events.Renderer"
       addview=".events.AddForm"
@@ -31,25 +32,12 @@
       />
 
     <!-- Resources -->
-    <!-- <browser:resourceDirectory
-        name="seantis.dir.events.stylesheets"
-        directory="css"/>
-    
     <browser:resourceDirectory
-        name="seantis.dir.events.javascript"
-        directory="js"/> -->
-
+        name="seantis.dir.eventsportlet.javascript"
+        directory="js"/>
+    
     <!-- Upgrades -->
     <!-- <genericsetup:upgradeStep
-      source="*"
-      destination="1000"
-      title=""
-      description=""
-      profile="seantis.dir.eventsportlet:default"
-      handler=".upgrades.setup_initial"
-      />
-
-    <genericsetup:upgradeStep
        source="1000"
        destination="1001"
        title=""
