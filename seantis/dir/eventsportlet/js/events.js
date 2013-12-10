@@ -67,8 +67,8 @@ var load_events = function($) {
     find_and_fill_events();
 };
 
-load_libraries(['jQuery'], function($) {
+(function($){
     $(document).ready(function() {
         load_events($);
     });
-});
+})(jQuery);
