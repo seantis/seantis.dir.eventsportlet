@@ -17,7 +17,6 @@ def get_long_description():
 
     return '\n'.join((readme, contributors, history))
 
-# :TODO:
 tests_require = [
     'collective.betterbrowser>=0.4',
     'collective.testcaselayer',
