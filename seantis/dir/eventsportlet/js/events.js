@@ -29,7 +29,7 @@ var load_events = function($) {
         }
     };
 
-    var get_event_tag = function(val, count, max) {
+    var get_event_tag = function(val, base_url, count, max) {
         var className = "portletItem" +
                         ((count % 2) ? " odd" : " even") +
                         ((count == max) ? " lastItem" : "");
@@ -37,25 +37,27 @@ var load_events = function($) {
         var dateText = startDate.getDate() + '.' +
                       (startDate.getMonth()+1) + '.' +
                        startDate.getFullYear();
+        var href = base_url + '/' + val.id;
 
         return '<dd class="' + className + '">' +
                '<p class="eventDate">' + dateText + '</p>' +
                '<p class="eventTitle">' +
-                    '<a href="' + val.origin + '">' + val.title + '</a>' +
+                    '<a href="' + href + '">' + val.title + '</a>' +
                '</p>' +
                '</dd>';
     };
 
     var find_and_fill_events = function() {
-        $(document).find('dd[data-event-config-url]').each(function(){
+        $(document).find('dd[data-event-config-url][data-event-config-base-url]').each(function(){
             var url = $(this).attr('data-event-config-url');
+            var base_url = $(this).attr('data-event-config-base-url');
             var portlet = $(this);
             $.getJSON(url, function(data) {
                 var events = [];
                 var count = 0;
                 var max = data.length;
                 $.each(data, function(key, val) {
-                    events.push(get_event_tag(val, ++count, max));
+                    events.push(get_event_tag(val, base_url, ++count, max));
                 });
                 $(portlet).replaceWith(events.join(''));
             });

@@ -10,7 +10,8 @@
     </dt>
 
     <dd class="portletItem"
-        tal:attributes="data-event-config-url string:${view/export_url}"
+        tal:attributes="data-event-config-url string:${view/export_url};
+                        data-event-config-base-url string:${view/data/url}"
         ></dd>
 
     <dd class="portletFooter">
