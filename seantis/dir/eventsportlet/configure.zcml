@@ -35,6 +35,9 @@
     <browser:resourceDirectory
         name="seantis.dir.eventsportlet.javascript"
         directory="js"/>
+    <browser:resourceDirectory
+        name="seantis.dir.eventsportlet.stylesheets"
+        directory="css"/>
     
     <!-- Upgrades -->
     <!-- <genericsetup:upgradeStep
