@@ -5,7 +5,7 @@ name = 'seantis.dir.eventsportlet'
 description = (
     "Portlet for displaying events."
 )
-version = '1.0rc1'
+version = '1.0rc2'
 
 def get_long_description():
     readme = open('README.rst').read()
