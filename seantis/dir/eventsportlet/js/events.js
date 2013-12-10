@@ -47,17 +47,15 @@ var load_events = function($) {
     };
 
     var find_and_fill_events = function() {
-        $(document).find('dd[data-event-config-url][data-event-config-max]').each(function(){
+        $(document).find('dd[data-event-config-url]').each(function(){
             var url = $(this).attr('data-event-config-url');
-            var max = $(this).attr('data-event-config-max');
             var portlet = $(this);
             $.getJSON(url, function(data) {
                 var events = [];
                 var count = 0;
+                var max = data.length;
                 $.each(data, function(key, val) {
-                    if (count++<max) {
-                        events.push(get_event_tag(val, count, max));
-                    }
+                    events.push(get_event_tag(val, ++count, max));
                 });
                 $(portlet).replaceWith(events.join(''));
             });

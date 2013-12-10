@@ -30,7 +30,8 @@ class IEventsPortlet(IPortletDataProvider):
     max_events = Int(
         title=_(u'Maximum number of displayed events'),
         required=True,
-        default=5
+        default=5,
+        min=1
     )
 
     do_filter = Bool(
@@ -96,7 +97,7 @@ class Renderer(base.Renderer):
 
         url = self.data.url.strip() + '?'
         if json:
-            url += 'type=json&'
+            url += 'type=json&max=' + str(self.data.max_events) + '&'
         if self.data.do_filter:
             url += 'filter=true&'
             if self.data.cat1:

@@ -51,7 +51,7 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.max_events').value = '10'
         browser.getControl('Save').click()
         browser.open('/')
-        self.assertTrue('data-event-config-max="10"' in browser.contents)
+        self.assertTrue('max=10' in browser.contents)
 
         # Add portlet
         browser.open(
@@ -60,8 +60,8 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.max_events').value = '15'
         browser.getControl('Save').click()
         browser.open('/')
-        self.assertTrue('data-event-config-max="10"' in browser.contents)
-        self.assertTrue('data-event-config-max="15"' in browser.contents)
+        self.assertTrue('max=10' in browser.contents)
+        self.assertTrue('max=15' in browser.contents)
 
     def test_browser_settings(self):
         browser = self.admin_browser
@@ -73,7 +73,7 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.max_events').value = '10'
         browser.getControl('Save').click()
         browser.open('/')
-        self.assertTrue('data-event-config-max="10"' in browser.contents)
+        self.assertTrue('max=10' in browser.contents)
         self.assertTrue('data-event-config-url="http://localhost:888?type=json'
                         in browser.contents)
 
@@ -87,7 +87,7 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        self.assertTrue('data-event-config-max="8"' in browser.contents)
+        self.assertTrue('max=8' in browser.contents)
         self.assertTrue('filter=true' not in browser.contents)
         self.assertTrue('cat1=Category1' not in browser.contents)
         self.assertTrue('cat2=' not in browser.contents)
@@ -101,8 +101,8 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        self.assertTrue('?type=json&amp;filter=true&amp;cat1=Category1'
-                        in browser.contents)
+        s = '?type=json&amp;max=8&amp;filter=true&amp;cat1=Category1'
+        self.assertTrue(s in browser.contents)
         self.assertTrue('cat2=' not in browser.contents)
 
         # Change categories
@@ -115,8 +115,8 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        self.assertTrue('?type=json&amp;filter=true&amp;cat2=Category2'
-                        in browser.contents)
+        s = '?type=json&amp;max=8&amp;filter=true&amp;cat2=Category2'
+        self.assertTrue(s in browser.contents)
         self.assertTrue('cat1=' not in browser.contents)
 
         # Change categories
@@ -129,6 +129,6 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        self.assertTrue(
-            '?type=json&amp;filter=true&amp;cat1=Category1&amp;cat2=Category2'
-            in browser.contents)
+        s = '?type=json&amp;max=8&amp;filter=true&amp;' \
+            'cat1=Category1&amp;cat2=Category2'
+        self.assertTrue(s in browser.contents)
