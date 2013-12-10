@@ -18,9 +18,6 @@ class BrowserTestCase(FunctionalTestCase):
         pass
 
     def test_browser_add_portlet(self):
-
-        self.assertTrue(True)
-
         browser = self.admin_browser
 
         # Check if portlet available
@@ -43,3 +40,95 @@ class BrowserTestCase(FunctionalTestCase):
 
         browser.open('/')
         self.assertTrue('portletSeantisDirEvents' in browser.contents)
+
+    def test_browser_add_multiple_portlets(self):
+        browser = self.admin_browser
+
+        # Add portlet
+        browser.open(
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+        browser.getControl(name='form.url').value = 'http://localhost:888'
+        browser.getControl(name='form.max_events').value = '10'
+        browser.getControl('Save').click()
+        browser.open('/')
+        self.assertTrue('data-event-config-max="10"' in browser.contents)
+
+        # Add portlet
+        browser.open(
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+        browser.getControl(name='form.url').value = 'http://localhost:888'
+        browser.getControl(name='form.max_events').value = '15'
+        browser.getControl('Save').click()
+        browser.open('/')
+        self.assertTrue('data-event-config-max="10"' in browser.contents)
+        self.assertTrue('data-event-config-max="15"' in browser.contents)
+
+    def test_browser_settings(self):
+        browser = self.admin_browser
+
+        # Add portlet
+        browser.open(
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+        browser.getControl(name='form.url').value = 'http://localhost:888'
+        browser.getControl(name='form.max_events').value = '10'
+        browser.getControl('Save').click()
+        browser.open('/')
+        self.assertTrue('data-event-config-max="10"' in browser.contents)
+        self.assertTrue('data-event-config-url="http://localhost:888?type=json'
+                        in browser.contents)
+
+        # Change max number of events
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+        browser.getControl(name='form.max_events').value = '8'
+        browser.getControl(name='form.cat1').value = 'Category1'
+        try:
+            browser.getControl('Save').click()
+        except Exception:
+            pass
+        browser.open('/')
+        self.assertTrue('data-event-config-max="8"' in browser.contents)
+        self.assertTrue('filter=true' not in browser.contents)
+        self.assertTrue('cat1=Category1' not in browser.contents)
+        self.assertTrue('cat2=' not in browser.contents)
+
+        # Enable filtering
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+        browser.getControl(name='form.do_filter').value = True
+        try:
+            browser.getControl('Save').click()
+        except Exception:
+            pass
+        browser.open('/')
+        self.assertTrue('?type=json&amp;filter=true&amp;cat1=Category1'
+                        in browser.contents)
+        self.assertTrue('cat2=' not in browser.contents)
+
+        # Change categories
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+        browser.getControl(name='form.cat1').value = ''
+        browser.getControl(name='form.cat2').value = 'Category2'
+        try:
+            browser.getControl('Save').click()
+        except Exception:
+            pass
+        browser.open('/')
+        self.assertTrue('?type=json&amp;filter=true&amp;cat2=Category2'
+                        in browser.contents)
+        self.assertTrue('cat1=' not in browser.contents)
+
+        # Change categories
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+        browser.getControl(name='form.cat1').value = 'Category1'
+        browser.getControl(name='form.cat2').value = 'Category2'
+        try:
+            browser.getControl('Save').click()
+        except Exception:
+            pass
+        browser.open('/')
+        self.assertTrue(
+            '?type=json&amp;filter=true&amp;cat1=Category1&amp;cat2=Category2'
+            in browser.contents)
