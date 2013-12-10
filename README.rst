@@ -56,8 +56,8 @@ Build Status
 Coverage
 --------
 
-.. image:: https://coveralls.io/repos/seantis/seantis.dir.eventsportlet/badge.png?branch=master
-  :target: https://coveralls.io/r/seantis/seantis.dir.eventsportlet?branch=master
+.. image:: https://coveralls.io/repos/seantis/seantis.dir.eventsportlet/badge.png
+  :target: https://coveralls.io/r/seantis/seantis.dir.eventsportlet
   :alt: Project Coverage
 
 
