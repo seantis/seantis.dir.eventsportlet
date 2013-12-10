@@ -40,10 +40,8 @@ var load_events = function($) {
         var href = base_url + '/' + val.id;
 
         return '<dd class="' + className + '">' +
-               '<p class="eventDate">' + dateText + '</p>' +
-               '<p class="eventTitle">' +
-                    '<a href="' + href + '">' + val.title + '</a>' +
-               '</p>' +
+               '<span class="eventDate">' + dateText + '</span>' +
+               '<a class="eventTitle" href="' + href + '">' + val.title + '</a>' +
                '</dd>';
     };
 
