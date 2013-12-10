@@ -3,7 +3,8 @@ Seantis Events Portlet
 
 Portlet for displaying events.
 
-seantis.dir.eventsportlet shows events coming from a seantis.dir.events.
+The portlet (seantis.dir.eventsportlet) shows events coming from a directory of
+events seantis.dir.events.
 
 
 Dependencies
