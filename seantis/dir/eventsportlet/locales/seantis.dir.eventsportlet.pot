@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-09 14:30+0000\n"
+"POT-Creation-Date: 2014-01-29 07:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: seantis.dir.eventsportlet\n"
 
+#: ./events.py:128
+msgid "A portlet which displays events."
+msgstr ""
+
+#: ./events.py:127
+msgid "Add events portlet"
+msgstr ""
+
 #: ./configure.zcml
 msgid "Adds a portlet to display events."
 msgstr ""
 
-#: ./events.py:127
-msgid "A portlet which displays events."
-msgstr ""
-
-#: ./events.py:126
-msgid "Add events portlet"
-msgstr ""
-
-#: ./events.py:141
+#: ./events.py:142
 msgid "Edit events portlet"
 msgstr ""
 
@@ -37,19 +37,19 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: ./events.py:80
+#: ./events.py:81
 msgid "Events portlet"
 msgstr ""
 
-#: ./events.py:37
+#: ./events.py:38
 msgid "Filter events by category names"
 msgstr ""
 
-#: ./events.py:43
+#: ./events.py:44
 msgid "Filter: 1st category name"
 msgstr ""
 
-#: ./events.py:49
+#: ./events.py:50
 msgid "Filter: 2nd category name"
 msgstr ""
 
