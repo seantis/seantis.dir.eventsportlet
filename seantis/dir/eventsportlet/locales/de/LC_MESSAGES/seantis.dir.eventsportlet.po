@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-01-29 07:41+0000\n"
+"POT-Creation-Date: 2014-01-29 07:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Veranstaltungs-Portlet hinzfügen"
 msgid "Adds a portlet to display events."
 msgstr "Fügt ein Portlet zum Anzeigen von Veranstaltungen hinzu."
 
+#: ./events.pt:20
+msgid "All events"
+msgstr "Alle Veranstaltungen"
+
 #: ./events.py:142
 msgid "Edit events portlet"
 msgstr "Veranstaltungs-Portlet bearbeiten"
@@ -48,10 +52,6 @@ msgstr "Filtere Veranstaltungen"
 #: ./events.py:31
 msgid "Maximum number of displayed events"
 msgstr "Maximale Anzahl angezeigter Veranstaltungen"
-
-#: ./events.pt:20
-msgid "More"
-msgstr "Mehr"
 
 #: ./events.py:26
 msgid "The URL of the events directory"
