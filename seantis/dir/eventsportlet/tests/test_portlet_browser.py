@@ -101,7 +101,8 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        s = '?type=json&amp;max=8&amp;filter=true&amp;cat1=Category1'
+        s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
+            'cat1=Category1'
         self.assertTrue(s in browser.contents)
         self.assertTrue('cat2=' not in browser.contents)
 
@@ -115,7 +116,8 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        s = '?type=json&amp;max=8&amp;filter=true&amp;cat2=Category2'
+        s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
+            'cat2=Category2'
         self.assertTrue(s in browser.contents)
         self.assertTrue('cat1=' not in browser.contents)
 
@@ -129,6 +131,6 @@ class BrowserTestCase(FunctionalTestCase):
         except Exception:
             pass
         browser.open('/')
-        s = '?type=json&amp;max=8&amp;filter=true&amp;' \
+        s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
             'cat1=Category1&amp;cat2=Category2'
         self.assertTrue(s in browser.contents)
