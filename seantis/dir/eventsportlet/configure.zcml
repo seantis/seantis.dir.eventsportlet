@@ -38,15 +38,15 @@
     <browser:resourceDirectory
         name="seantis.dir.eventsportlet.stylesheets"
         directory="css"/>
-    
+
     <!-- Upgrades -->
-    <!-- <genericsetup:upgradeStep
+    <genericsetup:upgradeStep
        source="1000"
        destination="1001"
        title=""
        description=""
        profile="seantis.dir.eventsportlet:default"
        handler=".upgrades.upgrade_1000_to_1001"
-       /> -->
+       />
 
 </configure>

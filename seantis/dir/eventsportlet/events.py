@@ -52,6 +52,12 @@ class IEventsPortlet(IPortletDataProvider):
         default=u''
     )
 
+    target_blank = Bool(
+        title=_(u'Open links in a new window or tab'),
+        required=False,
+        default=False
+    )
+
 
 class Assignment(base.Assignment):
 
@@ -64,12 +70,13 @@ class Assignment(base.Assignment):
     implements(IEventsPortlet)
 
     def __init__(self, url=u'', max_events=5,
-                 do_filter=False, cat1=u'', cat2=u''):
+                 do_filter=False, cat1=u'', cat2=u'', target_blank=False):
         self.url = url
         self.max_events = max_events
         self.do_filter = do_filter
         self.cat1 = cat1
         self.cat2 = cat2
+        self.target_blank = target_blank
 
     # title = _(u'Events portlet')
 
@@ -113,6 +120,12 @@ class Renderer(base.Renderer):
 
     def events_url(self):
         return self.build_url(False)
+
+    def target(self):
+        if self.data.target_blank:
+            return '_blank'
+        else:
+            return '_self'
 
 
 class AddForm(base.AddForm):

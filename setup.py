@@ -7,6 +7,7 @@ description = (
 )
 version = '1.1'
 
+
 def get_long_description():
     readme = open('README.rst').read()
     history = open(os.path.join('docs', 'HISTORY.rst')).read()

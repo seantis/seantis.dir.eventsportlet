@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-01-29 07:43+0000\n"
+"POT-Creation-Date: 2014-09-18 11:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: seantis.dir.eventsportlet\n"
 
-#: ./events.py:128
+#: ./events.py:134
 msgid "A portlet which displays events."
 msgstr ""
 
-#: ./events.py:127
+#: ./events.py:133
 msgid "Add events portlet"
 msgstr ""
 
@@ -33,7 +33,7 @@ msgstr ""
 msgid "All events"
 msgstr ""
 
-#: ./events.py:142
+#: ./events.py:148
 msgid "Edit events portlet"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: ./events.py:81
+#: ./events.py:87
 msgid "Events portlet"
 msgstr ""
 
@@ -51,6 +51,10 @@ msgstr ""
 
 #: ./events.py:31
 msgid "Maximum number of displayed events"
+msgstr ""
+
+#: ./events.py:56
+msgid "Open links in a new window or tab"
 msgstr ""
 
 #: ./events.py:26

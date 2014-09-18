@@ -7,7 +7,8 @@ Changelog
 
 - Show imported events #4
   [msom]
-
+- Make target in link configurable #5
+  [msom]
 
 1.0
 ~~~

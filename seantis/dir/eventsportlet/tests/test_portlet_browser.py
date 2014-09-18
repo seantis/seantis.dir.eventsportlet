@@ -26,7 +26,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Check saving settings
         browser.open(
-            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet'
+        )
         browser.getControl('Save').click()
         self.assertTrue('Required input is missing.' in browser.contents)
 
@@ -46,7 +47,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Add portlet
         browser.open(
-            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet'
+        )
         browser.getControl(name='form.url').value = 'http://localhost:888'
         browser.getControl(name='form.max_events').value = '10'
         browser.getControl('Save').click()
@@ -55,7 +57,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Add portlet
         browser.open(
-            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet'
+        )
         browser.getControl(name='form.url').value = 'http://localhost:888'
         browser.getControl(name='form.max_events').value = '15'
         browser.getControl('Save').click()
@@ -68,7 +71,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Add portlet
         browser.open(
-            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet')
+            '++contextportlets++plone.rightcolumn/+/seantis.dir.eventsportlet'
+        )
         browser.getControl(name='form.url').value = 'http://localhost:888'
         browser.getControl(name='form.max_events').value = '10'
         browser.getControl('Save').click()
@@ -79,7 +83,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Change max number of events
         browser.open(
-            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
         browser.getControl(name='form.max_events').value = '8'
         browser.getControl(name='form.cat1').value = 'Category1'
         try:
@@ -94,7 +99,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Enable filtering
         browser.open(
-            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
         browser.getControl(name='form.do_filter').value = True
         try:
             browser.getControl('Save').click()
@@ -108,7 +114,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Change categories
         browser.open(
-            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
         browser.getControl(name='form.cat1').value = ''
         browser.getControl(name='form.cat2').value = 'Category2'
         try:
@@ -123,7 +130,8 @@ class BrowserTestCase(FunctionalTestCase):
 
         # Change categories
         browser.open(
-            '++contextportlets++plone.rightcolumn/events-portlet/edit')
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
         browser.getControl(name='form.cat1').value = 'Category1'
         browser.getControl(name='form.cat2').value = 'Category2'
         try:
@@ -134,3 +142,31 @@ class BrowserTestCase(FunctionalTestCase):
         s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
             'cat1=Category1&amp;cat2=Category2'
         self.assertTrue(s in browser.contents)
+
+        # Open in same window per default
+        self.assertTrue('data-event-config-target="_self"' in browser.contents)
+        self.assertTrue(
+            'data-event-config-target="_blank"' not in browser.contents
+        )
+        self.assertTrue('target="_self">All events' in browser.contents)
+        self.assertTrue('target="_blank">All events' not in browser.contents)
+
+        # Change target
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
+        browser.getControl(name='form.target_blank').value = True
+        try:
+            browser.getControl('Save').click()
+        except Exception:
+            pass
+        browser.open('/')
+
+        self.assertTrue(
+            'data-event-config-target="_blank"' in browser.contents
+        )
+        self.assertTrue(
+            'data-event-config-target="_self"' not in browser.contents
+        )
+        self.assertTrue('target="_self">All events' not in browser.contents)
+        self.assertTrue('target="_blank">All events' in browser.contents)
