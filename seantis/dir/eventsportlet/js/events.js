@@ -37,7 +37,12 @@ var load_events = function($) {
         var dateText = startDate.getDate() + '.' +
                       (startDate.getMonth()+1) + '.' +
                        startDate.getFullYear();
-        var href = base_url + '/' + val.id;
+        var href = "";
+        if (val.hasOwnProperty("url")) {
+            href = val.url;
+        } else {
+            href = base_url + '/' + val.id;
+        }
 
         return '<dd class="' + className + '">' +
                '<span class="eventDate">' + dateText + '</span>' +
