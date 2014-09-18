@@ -2,6 +2,12 @@
 Changelog
 ---------
 
+1.2 (unreleased)
+~~~~~~~~~~~~~~~~
+
+Nothing yet.
+
+
 1.1 (2014-09-18)
 ~~~~~~~~~~~~~~~~
 
@@ -11,6 +17,7 @@ Changelog
   [msom]
 - Use the given URL of the event #6.
   [msom]
+
 
 1.0 (2014-01-29)
 ~~~~~~~~~~~~~~~~~~~
