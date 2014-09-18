@@ -90,14 +90,14 @@ class Renderer(base.Renderer):
     of this class. Other methods can be added and referenced in the template.
     """
 
-
     render = ViewPageTemplateFile('events.pt')
 
     def build_url(self, json=True):
 
         url = self.data.url.strip() + '?'
         if json:
-            url += 'type=json&max=' + str(self.data.max_events) + '&'
+            url += 'type=json&imported=true&max=' + str(self.data.max_events)
+            url += '&'
         if self.data.do_filter:
             url += 'filter=true&'
             if self.data.cat1:

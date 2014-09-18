@@ -2,8 +2,11 @@
 Changelog
 ---------
 
-1.0 (unreleased)
-~~~~~~~~~~~~~~~~
+1.1
+~~~
+
+- Show imported events #4
+  [msom]
 
 
 1.0
