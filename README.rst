@@ -38,7 +38,7 @@ Installation
 
     [instance]
     ...
-    environment-vars = 
+    environment-vars =
         ...
         zope_i18n_compile_mo_files true
 
@@ -64,7 +64,7 @@ Coverage
 
 Latests PyPI Release
 --------------------
-.. image:: https://pypip.in/v/seantis.dir.eventsportlet/badge.png
+.. image:: https://img.shields.io/pypi/v/seantis.dir.eventsportlet.svg
   :target: https://crate.io/packages/seantis.dir.eventsportlet
   :alt: Latest PyPI Release
 
