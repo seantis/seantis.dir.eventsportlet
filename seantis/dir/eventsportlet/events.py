@@ -6,7 +6,7 @@ from zope.interface import implements
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
 
-from zope.schema import Bool, Int, TextLine, URI
+from zope.schema import Bool, Int, Text, URI
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -40,14 +40,16 @@ class IEventsPortlet(IPortletDataProvider):
         default=False
     )
 
-    cat1 = TextLine(
+    cat1 = Text(
         title=_(u'What'),
+        description=_(u'One category per line.'),
         required=False,
         default=u''
     )
 
-    cat2 = TextLine(
+    cat2 = Text(
         title=_(u'Where'),
+        description=_(u'One category per line.'),
         required=False,
         default=u''
     )
@@ -99,6 +101,21 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('events.pt')
 
+    def as_query_param(self, label, values):
+        if not label or not values:
+            return ''
+
+        categories = [
+            urllib.quote_plus(cat.strip().encode('utf-8'))
+            for cat in values.strip().split('\n') if cat.strip()
+        ]
+
+        if categories:
+            categories.insert(0, '')
+            return '&{}='.format(label).join(categories)
+
+        return ''
+
     def build_url(self, json=True):
 
         url = self.data.url.strip() + '?'
@@ -106,13 +123,9 @@ class Renderer(base.Renderer):
             url += 'type=json&imported=true&max=' + str(self.data.max_events)
             url += '&'
         if self.data.do_filter:
-            url += 'filter=true&'
-            if self.data.cat1:
-                cat = urllib.quote_plus(self.data.cat1.strip().encode('utf-8'))
-                url += 'cat1=' + cat + '&'
-            if self.data.cat2:
-                cat = urllib.quote_plus(self.data.cat2.strip().encode('utf-8'))
-                url += 'cat2=' + cat
+            url += 'filter=true'
+            url += self.as_query_param('cat1', self.data.cat1)
+            url += self.as_query_param('cat2', self.data.cat2)
         return url
 
     def export_url(self):
