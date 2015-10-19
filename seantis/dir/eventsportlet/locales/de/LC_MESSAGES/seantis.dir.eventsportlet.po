@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-18 11:48+0000\n"
+"POT-Creation-Date: 2015-10-19 08:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: seantis.dir.eventsportlet\n"
 
-#: ./events.py:134
+#: ./events.py:154
 msgid "A portlet which displays events."
 msgstr "Ein Portlet zum Anzeigen von Veranstaltungen."
 
-#: ./events.py:133
+#: ./events.py:153
 msgid "Add events portlet"
 msgstr "Veranstaltungs-Portlet hinzfügen"
 
@@ -33,7 +33,7 @@ msgstr "Fügt ein Portlet zum Anzeigen von Veranstaltungen hinzu."
 msgid "All events"
 msgstr "Alle Veranstaltungen"
 
-#: ./events.py:148
+#: ./events.py:168
 msgid "Edit events portlet"
 msgstr "Veranstaltungs-Portlet bearbeiten"
 
@@ -41,7 +41,7 @@ msgstr "Veranstaltungs-Portlet bearbeiten"
 msgid "Events"
 msgstr "Veranstaltungen"
 
-#: ./events.py:87
+#: ./events.py:90
 msgid "Events portlet"
 msgstr "Veranstaltungs-Portlet"
 
@@ -53,7 +53,11 @@ msgstr "Filtere Veranstaltungen"
 msgid "Maximum number of displayed events"
 msgstr "Maximale Anzahl angezeigter Veranstaltungen"
 
-#: ./events.py:56
+#: ./events.py:45
+msgid "One category per line."
+msgstr "Eine Kategorie pro Zeile."
+
+#: ./events.py:58
 msgid "Open links in a new window or tab"
 msgstr "Links in neuem Fenster oder Tab öffnen"
 
@@ -65,6 +69,7 @@ msgstr "URL des Veranstaltungskalenders"
 msgid "What"
 msgstr "Was"
 
-#: ./events.py:50
+#: ./events.py:51
 msgid "Where"
 msgstr "Wo"
+

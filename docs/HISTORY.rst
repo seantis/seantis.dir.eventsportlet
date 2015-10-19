@@ -5,8 +5,8 @@ Changelog
 1.2 (unreleased)
 ~~~~~~~~~~~~~~~~
 
-Nothing yet.
-
+- Allow filtering for multiple categories #7.
+  [msom]
 
 1.1 (2014-09-18)
 ~~~~~~~~~~~~~~~~
@@ -18,12 +18,10 @@ Nothing yet.
 - Use the given URL of the event #6.
   [msom]
 
-
 1.0 (2014-01-29)
 ~~~~~~~~~~~~~~~~~~~
 - Rewording.
   [msom]
-
 
 1.0rc1 (2013-12-10)
 ~~~~~~~~~~~~~~~~~~~

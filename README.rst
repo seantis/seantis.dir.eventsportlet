@@ -6,6 +6,9 @@ Portlet for displaying events.
 The portlet (seantis.dir.eventsportlet) shows events coming from a directory of
 events (seantis.dir.events).
 
+Warning! Using multiple categories together with older calendars might result
+in errors on the event calendar. You still might use the new version of the
+portlet by assuring, only one category is set.
 
 Dependencies
 ------------

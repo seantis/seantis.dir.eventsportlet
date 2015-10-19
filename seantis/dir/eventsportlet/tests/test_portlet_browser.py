@@ -1,6 +1,5 @@
-# from seantis.dir.eventsportlet.tests import IntegrationTestCase
 from seantis.dir.eventsportlet.tests import FunctionalTestCase
-
+from zExceptions import NotFound
 
 class BrowserTestCase(FunctionalTestCase):
 
@@ -89,7 +88,7 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.cat1').value = 'Category1'
         try:
             browser.getControl('Save').click()
-        except Exception:
+        except NotFound:
             pass
         browser.open('/')
         self.assertTrue('max=8' in browser.contents)
@@ -104,11 +103,12 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.do_filter').value = True
         try:
             browser.getControl('Save').click()
-        except Exception:
+        except NotFound:
             pass
         browser.open('/')
         s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
             'cat1=Category1'
+
         self.assertTrue(s in browser.contents)
         self.assertTrue('cat2=' not in browser.contents)
 
@@ -120,7 +120,7 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.cat2').value = 'Category2'
         try:
             browser.getControl('Save').click()
-        except Exception:
+        except NotFound:
             pass
         browser.open('/')
         s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
@@ -136,11 +136,27 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.cat2').value = 'Category2'
         try:
             browser.getControl('Save').click()
-        except Exception:
+        except NotFound:
             pass
         browser.open('/')
         s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
             'cat1=Category1&amp;cat2=Category2'
+        self.assertTrue(s in browser.contents)
+
+        # Change categories
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
+        browser.getControl(name='form.cat1').value = 'Category1\nCategory1_1'
+        browser.getControl(name='form.cat2').value = 'Category2\nCategory2_1'
+        try:
+            browser.getControl('Save').click()
+        except NotFound:
+            pass
+        browser.open('/')
+        s = '?type=json&amp;imported=true&amp;max=8&amp;filter=true&amp;' \
+            'cat1=Category1&amp;cat1=Category1_1&amp;' \
+            'cat2=Category2&amp;cat2=Category2_1'
         self.assertTrue(s in browser.contents)
 
         # Open in same window per default
@@ -158,7 +174,7 @@ class BrowserTestCase(FunctionalTestCase):
         browser.getControl(name='form.target_blank').value = True
         try:
             browser.getControl('Save').click()
-        except Exception:
+        except NotFound:
             pass
         browser.open('/')
 
