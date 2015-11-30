@@ -8,6 +8,9 @@ Changelog
 - Allow filtering for multiple categories #7.
   [msom]
 
+- Allow a custom link to the events directory.
+  [msom]
+
 1.1 (2014-09-18)
 ~~~~~~~~~~~~~~~~
 

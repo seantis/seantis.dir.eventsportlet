@@ -49,4 +49,13 @@
        handler=".upgrades.upgrade_1000_to_1001"
        />
 
+    <genericsetup:upgradeStep
+       source="1001"
+       destination="1002"
+       title=""
+       description=""
+       profile="seantis.dir.eventsportlet:default"
+       handler=".upgrades.upgrade_1001_to_1002"
+       />
+
 </configure>

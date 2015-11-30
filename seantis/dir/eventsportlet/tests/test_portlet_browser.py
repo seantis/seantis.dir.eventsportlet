@@ -1,6 +1,7 @@
 from seantis.dir.eventsportlet.tests import FunctionalTestCase
 from zExceptions import NotFound
 
+
 class BrowserTestCase(FunctionalTestCase):
 
     def setUp(self):
@@ -186,3 +187,15 @@ class BrowserTestCase(FunctionalTestCase):
         )
         self.assertTrue('target="_self">All events' not in browser.contents)
         self.assertTrue('target="_blank">All events' in browser.contents)
+
+        # Change all events url
+        browser.open(
+            '++contextportlets++plone.rightcolumn/events-portlet/edit'
+        )
+        browser.getControl(name='form.all_url').value = 'http://new.to'
+        try:
+            browser.getControl('Save').click()
+        except NotFound:
+            pass
+        browser.open('/')
+        self.assertTrue('http://new.to' in browser.contents)

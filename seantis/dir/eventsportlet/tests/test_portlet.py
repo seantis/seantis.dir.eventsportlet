@@ -1,5 +1,5 @@
 from seantis.dir.eventsportlet.tests import IntegrationTestCase
-from seantis.dir.eventsportlet.events import Assignment, Renderer
+from seantis.dir.eventsportlet.events import Renderer
 
 
 class BrowserTestCase(IntegrationTestCase):
