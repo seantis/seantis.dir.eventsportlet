@@ -5,7 +5,7 @@ name = 'seantis.dir.eventsportlet'
 description = (
     "Portlet for displaying events."
 )
-version = '1.2'
+version = '1.2.1'
 
 
 def get_long_description():
