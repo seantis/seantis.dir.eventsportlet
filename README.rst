@@ -1,6 +1,19 @@
 Seantis Events Portlet
 ======================
 
+.. image:: https://api.travis-ci.org/seantis/seantis.dir.eventsportlet.png?branch=master
+  :target: https://travis-ci.org/seantis/seantis.dir.eventsportlet
+  :alt: Build Status
+
+.. image:: https://coveralls.io/repos/seantis/seantis.dir.eventsportlet/badge.png
+  :target: https://coveralls.io/r/seantis/seantis.dir.eventsportlet
+  :alt: Project Coverage
+
+.. image:: https://img.shields.io/pypi/v/seantis.dir.eventsportlet.svg
+  :target: https://pypi.python.org/pypi/seantis.dir.eventsportlet
+  :alt: Latest PyPI Release
+
+
 Portlet for displaying events.
 
 The portlet (seantis.dir.eventsportlet) shows events coming from a directory of
@@ -47,29 +60,6 @@ Installation
 
 
 4. Install dexterity and seantis.dir.eventsportlet using portal_quickinstaller
-
-
-Build Status
-------------
-
-.. image:: https://api.travis-ci.org/seantis/seantis.dir.eventsportlet.png?branch=master
-  :target: https://travis-ci.org/seantis/seantis.dir.eventsportlet
-  :alt: Build Status
-
-
-Coverage
---------
-
-.. image:: https://coveralls.io/repos/seantis/seantis.dir.eventsportlet/badge.png
-  :target: https://coveralls.io/r/seantis/seantis.dir.eventsportlet
-  :alt: Project Coverage
-
-
-Latests PyPI Release
---------------------
-.. image:: https://img.shields.io/pypi/v/seantis.dir.eventsportlet.svg
-  :target: https://crate.io/packages/seantis.dir.eventsportlet
-  :alt: Latest PyPI Release
 
 
 License
