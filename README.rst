@@ -1,6 +1,8 @@
 Seantis Events Portlet
 ======================
 
+Portlet for displaying events.
+
 .. image:: https://api.travis-ci.org/seantis/seantis.dir.eventsportlet.png?branch=master
   :target: https://travis-ci.org/seantis/seantis.dir.eventsportlet
   :alt: Build Status
@@ -12,9 +14,6 @@ Seantis Events Portlet
 .. image:: https://img.shields.io/pypi/v/seantis.dir.eventsportlet.svg
   :target: https://pypi.python.org/pypi/seantis.dir.eventsportlet
   :alt: Latest PyPI Release
-
-
-Portlet for displaying events.
 
 The portlet (seantis.dir.eventsportlet) shows events coming from a directory of
 events (seantis.dir.events).
